@@ -14,3 +14,8 @@ int xmaxsize() {
     getmaxyx(stdscr,y,x);
     return x;
 }
+int ymaxsize() {
+    int x,y;
+    getmaxyx(stdscr,y,x);
+    return y;
+}

@@ -47,19 +47,29 @@ int colours() {
         if(start_color() == OK) { // Start color and see if it is ok
             init_pair(1, COLOR_BLACK, COLOR_WHITE); // Make a pair with an id of 1, text color of black and background of white
             // TODO: get things inside window, titlebar
-            WINDOW *pwin = newwin(10, 20, 1,10);
+            int xmax = xmaxsize(); // util.h: find width of screen
+            int ymax = ymaxsize();
+            WINDOW *titlebar = newwin(1, xmax, 0,0); // Create a window titlebar that is FULLSCREEN
             refresh();
-            int xmax = xmaxsize();
-            mvwhline(pwin,0,0,' ',xmax);
-            wprintw(pwin,"Random Terminal IDE");
-            mvwchgat(pwin,0,0,-1,A_REVERSE,0,0);
 
+            // Titlebar
+            mvwhline(titlebar,0,0,' ',xmax);
+            wprintw(titlebar,"Random Terminal IDE\n\n");
+            mvwchgat(titlebar,0,0,-1,A_REVERSE,0,0);
+
+            wrefresh(titlebar); // Refresh window
+
+            /*
             attrset(COLOR_PAIR(1) | A_BOLD); // Set current pair to pair 1
-            addstr("Random Terminal IDE\n\n"); // print text
+            wprintw(titlebar,"Random Terminal IDE\n\n"); // print text
             refresh(); // refresh so that buffer gets onto screen
             attroff(COLOR_PAIR(1)); // discard so that other text looks normal
             attroff(A_BOLD); // discard so that other text looks normal
-            addstr("Press any key to exit.\n");
+            */
+
+            WINDOW *textEditor = newwin(ymax-1, xmax, 1,0); // Create a window titlebar that is FULLSCREEN
+            wprintw(textEditor,"\nPress any key to exit.\n");
+            wrefresh(textEditor);
             refresh();
             getch();
         }
