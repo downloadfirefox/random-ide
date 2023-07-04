@@ -46,7 +46,7 @@ static void driver(int ch)
 	int i;
 
 	switch (ch) {
-		case KEY_F(2):
+		case KEY_F(7):
 			// Or the current field buffer won't be sync with what is displayed
 			form_driver(form, REQ_NEXT_FIELD);
 			form_driver(form, REQ_PREV_FIELD);
@@ -127,7 +127,7 @@ int main()
 	assert(fields[0] != NULL && fields[1] != NULL && fields[2] != NULL && fields[3] != NULL);
 
 	set_field_buffer(fields[0], 0, "label1");
-	set_field_buffer(fields[1], 0, "val1");
+	set_field_buffer(fields[1], 0, "");
 	set_field_buffer(fields[2], 0, "label2");
 	set_field_buffer(fields[3], 0, "val2");
 
@@ -149,7 +149,7 @@ int main()
 	wrefresh(win_body);
 	wrefresh(win_form);
 
-	while ((ch = getch()) != KEY_F(1))
+	while ((ch = getch()) != KEY_F(8))
 		driver(ch);
 
 	unpost_form(form);
