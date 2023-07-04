@@ -8,3 +8,9 @@
 void clr() {
     system("clear");
 }
+
+int xmaxsize() {
+    int x,y;
+    getmaxyx(stdscr,y,x);
+    return x;
+}
