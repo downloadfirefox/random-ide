@@ -1,7 +1,14 @@
 #include <stdlib.h>
-#include <ncurses.h>
+#include <ncurses.h> // Do not need to include stdio.h as ncurses does that
 #include "util.h"
 #include <string.h>
+
+/*
+Printing using ncurses:
+- printw() - equivalent to printf(), for variables
+- addch() - prints a single char, equals putchar()
+- addstr() - prints a specified string, equals puts(), strings only
+*/
 
 int main() {
 
@@ -10,10 +17,10 @@ int main() {
     // util.h: void clr()
     // Clears screen
     clr();
-    printw("Hello, world!\n");
-    refresh();
+    addstr("Hello, world!\n");
+    refresh(); // Refresh the screen to show the latest content
 
-    // pause the screen output
+    // pause the screen output, wait for key input to continue
     getch();
 
     // deallocates memory and ends ncurses
