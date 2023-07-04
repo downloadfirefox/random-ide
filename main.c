@@ -4,6 +4,19 @@
 #include <string.h>
 
 int main() {
+
+    // Initialize ncurses
+    initscr();
+    // util.h: void clr()
+    // Clears screen
     clr();
-    printf("Hello, world!\n");
+    printw("Hello, world!\n");
+    refresh();
+
+    // pause the screen output
+    getch();
+
+    // deallocates memory and ends ncurses
+    endwin();
+    return EXIT_SUCCESS;
 }
