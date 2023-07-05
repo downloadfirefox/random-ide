@@ -6,6 +6,7 @@
  */
 #include <ncurses.h>
 #include <form.h>
+
 #include <assert.h>
 #include <string.h>
 #include <stdlib.h>

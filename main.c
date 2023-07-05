@@ -42,6 +42,8 @@ COLOR_CYAN
 COLOR_WHITE
 */
 int colours() {
+    noecho();
+    cbreak();
     clr();
     if (has_colors()) { // Check if the terminal can output colours
         if(start_color() == OK) { // Start color and see if it is ok
@@ -77,6 +79,7 @@ int colours() {
 
     return EXIT_SUCCESS;
 }
+
 
 int main() {
     initscr();
