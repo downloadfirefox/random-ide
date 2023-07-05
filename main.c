@@ -80,6 +80,18 @@ int colours() {
     return EXIT_SUCCESS;
 }
 
+int input_test() {
+    noecho();
+    cbreak();
+    clr();
+
+    // Make variables
+    FIELD *field[3];
+	FORM  *my_form;
+
+    return EXIT_SUCCESS;
+}
+
 
 int main() {
     initscr();
