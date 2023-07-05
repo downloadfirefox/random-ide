@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #endif
 
-void clr() {
+void clr() { // Clears the screen
     system("clear");
 }
 
