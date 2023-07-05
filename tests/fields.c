@@ -2,7 +2,7 @@
  * Simple ncurses form example with fields that actually behaves like fields.
  *
  * How to run:
- *	gcc -Wall -Werror -g -pedantic -o test fields_magic.c -lform -lncurses
+ *	gcc -Wall -Werror -g -pedantic -o test.out fields.c -lform -lncurses
  */
 #include <ncurses.h>
 #include <form.h>
